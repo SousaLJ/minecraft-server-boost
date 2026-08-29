@@ -61,11 +61,6 @@ Public documentation, support, compatibility, and issue-tracking repository for
 Official CurseForge and Modrinth links will be added after publication. / Os
 links oficiais do CurseForge e Modrinth serão adicionados após a publicação.
 
-## Maintainer setup / Preparação do mantenedor
-
-Read [SETUP.md](SETUP.md) before the first publication. / Leia
-[SETUP.md](SETUP.md) antes da primeira publicação.
-
 ## License / Licença
 
 Public visibility does not grant a license over the mod source code. / A
