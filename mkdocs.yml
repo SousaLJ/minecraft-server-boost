@@ -1,0 +1,130 @@
+site_name: Minecraft Server Boost
+site_description: Documentação, suporte e acompanhamento público do Minecraft Server Boost.
+site_url: https://SousaLJ.github.io/minecraft-server-boost/
+repo_url: https://github.com/SousaLJ/minecraft-server-boost
+repo_name: SousaLJ/minecraft-server-boost
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  icon:
+    logo: material/server
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Usar tema escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Usar tema claro
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: pt
+          name: Português (Brasil)
+          default: true
+          build: true
+        - locale: en
+          name: English
+          build: true
+          site_description: Documentation, support, and public issue tracking for Minecraft Server Boost.
+          nav_translations:
+            Início: Home
+            Começando: Getting Started
+            Instalação: Installation
+            Primeiros passos: First Steps
+            Recursos disponíveis: Available Features
+            Todos os comandos: All Commands
+            Visão geral: Overview
+            Comandos: Commands
+            Configuração e dados: Configuration and Data
+            Permissões: Permissions
+            Sistema built-in: Built-in System
+            FTB Ranks e handlers externos: FTB Ranks and External Handlers
+            Nodes disponíveis: Available Nodes
+            Compatibilidade: Compatibility
+            Matriz de suporte: Support Matrix
+            Minecraft 1.21.1: Minecraft 1.21.1
+            Próximos recursos: Upcoming Features
+            Sistema de anúncios: Announcement System
+            Ajuda: Help
+            Erros comuns: Common Errors
+            Como relatar um bug: Reporting a Bug
+            Suporte: Support
+            Privacidade: Privacy
+            Projeto: Project
+            Fluxo público e privado: Public and Private Workflow
+            Metadados do mod: Mod Metadata
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - tables
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Início: index.md
+  - Começando:
+      - Instalação: getting-started/installation.md
+      - Primeiros passos: getting-started/first-steps.md
+      - Recursos disponíveis: features/index.md
+      - Todos os comandos: commands/index.md
+  - Kits:
+      - Visão geral: kits/overview.md
+      - Comandos: kits/commands.md
+      - Configuração e dados: kits/configuration.md
+  - Permissões:
+      - Visão geral: permissions/overview.md
+      - Sistema built-in: permissions/built-in.md
+      - FTB Ranks e handlers externos: permissions/ftb-ranks.md
+      - Nodes disponíveis: permissions/nodes.md
+  - Skins:
+      - MineSkin: skins/mineskin.md
+  - Compatibilidade:
+      - Matriz de suporte: compatibility/index.md
+      - Minecraft 1.20.1: compatibility/minecraft-1.20.1.md
+      - Minecraft 1.21.1: compatibility/roadmap-1.21.1.md
+  - Próximos recursos:
+      - Sistema de anúncios: announcements/overview.md
+      - Roadmap: roadmap.md
+  - Ajuda:
+      - Erros comuns: troubleshooting/common-errors.md
+      - Como relatar um bug: troubleshooting/reporting-bugs.md
+      - Suporte: support.md
+      - Privacidade: privacy.md
+  - Projeto:
+      - Changelog: changelog.md
+      - Fluxo público e privado: admin/public-private-workflow.md
+      - Metadados do mod: admin/mod-metadata.md

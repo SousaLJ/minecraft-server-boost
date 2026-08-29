@@ -1,0 +1,146 @@
+name: Relatar um bug (Português)
+description: Informe um comportamento reproduzível do Minecraft Server Boost.
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado pelo relato. Remova tokens, IPs privados e dados pessoais dos logs.
+        Vulnerabilidades devem ser relatadas pela aba Security, não aqui.
+
+  - type: input
+    id: mod_version
+    attributes:
+      label: Versão do mod
+      placeholder: "Exemplo: 1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: minecraft_version
+    attributes:
+      label: Versão do Minecraft
+      options:
+        - 1.20.1
+        - 1.21.1
+        - Outra ou não listada
+    validations:
+      required: true
+
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Modloader
+      options:
+        - Forge
+        - NeoForge
+        - Fabric
+        - Outro
+    validations:
+      required: true
+
+  - type: input
+    id: loader_version
+    attributes:
+      label: Versão do modloader
+      placeholder: "Exemplo: Forge 47.x/52.x ou NeoForge 21.1.x"
+    validations:
+      required: true
+
+  - type: input
+    id: java_version
+    attributes:
+      label: Versão do Java
+      placeholder: Cole a saída de java -version
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Ambiente
+      options:
+        - Servidor dedicado
+        - Servidor integrado / single-player
+        - Cliente ao conectar em servidor
+    validations:
+      required: true
+
+  - type: dropdown
+    id: permission_backend
+    attributes:
+      label: Backend de permissões
+      options:
+        - AUTO
+        - BUILT_IN
+        - EXTERNAL
+        - Não se aplica / não sei
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kit_access_mode
+    attributes:
+      label: Modo de acesso do kit
+      description: Informe o valor exibido por /kit info quando o problema envolver kits.
+      options:
+        - public
+        - permission_required
+        - Não se aplica / não sei
+    validations:
+      required: true
+
+  - type: textarea
+    id: other_mods
+    attributes:
+      label: Mods relacionados
+      description: Informe principalmente FTB Ranks e outros handlers de permissão.
+      placeholder: Nome e versão dos mods possivelmente relacionados.
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Inicie o servidor com...
+        2. Execute...
+        3. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Resultado obtido
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs ou crash report
+      description: Arraste os arquivos para cá. Prefira arquivos completos a recortes de tela.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmações
+      options:
+        - label: Procurei por Issues existentes antes de abrir esta.
+          required: true
+        - label: Removi tokens, IPs privados e dados pessoais dos anexos.
+          required: true
+        - label: Este relato não descreve uma vulnerabilidade de segurança.
+          required: true

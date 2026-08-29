@@ -1,0 +1,146 @@
+name: Report a bug (English)
+description: Report reproducible Minecraft Server Boost behavior.
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for the report. Remove tokens, private IPs, and personal data from logs.
+        Security vulnerabilities must be reported through the Security tab, not here.
+
+  - type: input
+    id: mod_version
+    attributes:
+      label: Mod version
+      placeholder: "Example: 1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: minecraft_version
+    attributes:
+      label: Minecraft version
+      options:
+        - 1.20.1
+        - 1.21.1
+        - Other or unlisted
+    validations:
+      required: true
+
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Modloader
+      options:
+        - Forge
+        - NeoForge
+        - Fabric
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: loader_version
+    attributes:
+      label: Modloader version
+      placeholder: "Example: Forge 47.x/52.x or NeoForge 21.1.x"
+    validations:
+      required: true
+
+  - type: input
+    id: java_version
+    attributes:
+      label: Java version
+      placeholder: Paste the output of java -version
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Dedicated server
+        - Integrated server / single-player
+        - Client connecting to a server
+    validations:
+      required: true
+
+  - type: dropdown
+    id: permission_backend
+    attributes:
+      label: Permission backend
+      options:
+        - AUTO
+        - BUILT_IN
+        - EXTERNAL
+        - Not applicable / unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kit_access_mode
+    attributes:
+      label: Kit access mode
+      description: Provide the value shown by /kit info when the problem involves kits.
+      options:
+        - public
+        - permission_required
+        - Not applicable / unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: other_mods
+    attributes:
+      label: Related mods
+      description: Include FTB Ranks and other permission handlers in particular.
+      placeholder: Names and versions of potentially related mods.
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Start the server with...
+        2. Run...
+        3. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or crash report
+      description: Drag complete files here instead of posting screenshots.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing Issues before opening this report.
+          required: true
+        - label: I removed tokens, private IPs, and personal data from attachments.
+          required: true
+        - label: This report does not describe a security vulnerability.
+          required: true

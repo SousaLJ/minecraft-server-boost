@@ -1,0 +1,51 @@
+name: Solicitar uma melhoria (Português)
+description: Proponha um recurso ou aperfeiçoamento com um caso de uso claro.
+title: "[Feature]: "
+labels:
+  - enhancement
+  - needs-triage
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema ou necessidade
+      description: Explique o que hoje é difícil ou impossível para o administrador ou jogador.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Solução proposta
+      description: Descreva o comportamento esperado sem depender de detalhes internos.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área principal
+      options:
+        - Kits
+        - Permissões
+        - Skins
+        - Anúncios e boas-vindas
+        - Configuração
+        - Compatibilidade de modloader
+        - Documentação
+        - Outra
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmações
+      options:
+        - label: Procurei por pedidos semelhantes no roadmap e nas Issues.
+          required: true

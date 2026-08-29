@@ -1,0 +1,52 @@
+name: Request a feature (English)
+description: Propose a feature or improvement with a clear use case.
+title: "[Feature]: "
+labels:
+  - enhancement
+  - needs-triage
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or need
+      description: Explain what is currently difficult or impossible for administrators or players.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the expected behavior without relying on internal implementation details.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Kits
+        - Permissions
+        - Skins
+        - Announcements and welcome messages
+        - Configuration
+        - Modloader compatibility
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched the roadmap and existing Issues for similar requests.
+          required: true
+

@@ -1,0 +1,53 @@
+name: Report an incompatibility (English)
+description: Report a conflict involving a modloader, mod, Java version, or environment.
+title: "[Compatibility]: "
+labels:
+  - compatibility
+  - needs-triage
+body:
+  - type: input
+    id: setup
+    attributes:
+      label: Tested environment
+      placeholder: Minecraft 1.21.1, Forge 52.x or NeoForge 21.1.x, Java 21, mod 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: conflicting_component
+    attributes:
+      label: Incompatible component
+      placeholder: Name and version of the mod, modloader, proxy, or panel
+    validations:
+      required: true
+
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Startup crash
+        - Runtime crash
+        - Command does not work
+        - Incorrect permission
+        - Skin does not update
+        - Data or configuration does not load
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: isolation
+    attributes:
+      label: Isolation test
+      description: Explain how you confirmed that this combination causes the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Complete logs
+      description: Remove tokens, private IPs, and personal data.
+    validations:
+      required: true

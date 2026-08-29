@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation / Documentação
+    url: https://SousaLJ.github.io/minecraft-server-boost/
+    about: Installation, commands, permissions, and common errors in English and Portuguese.
+  - name: Questions and discussion / Dúvidas e conversa
+    url: https://github.com/SousaLJ/minecraft-server-boost/discussions
+    about: Use Discussions for general support and open-ended ideas.
+  - name: Private security report / Relato privado de segurança
+    url: https://github.com/SousaLJ/minecraft-server-boost/security/advisories/new
+    about: Do not expose vulnerabilities, tokens, or private data in Issues.
