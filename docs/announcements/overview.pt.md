@@ -4,22 +4,45 @@ lang: pt-BR
 
 # Sistema de anúncios
 
-!!! note "Recurso planejado"
-    Anúncios e mensagens de boas-vindas ainda não fazem parte da versão inicial.
+O sistema roda inteiramente no servidor.
 
-O desenho comum previsto inclui:
+## Eventos automáticos
 
-- mensagens de boas-vindas ao entrar;
-- anúncios periódicos de regras, Discord e informações do servidor;
-- seleção sequencial ou aleatória;
-- placeholders seguros, como jogador e quantidade online;
-- arquivo de conteúdo `messages.json` separado da configuração do modloader;
-- configuração de ativação, intervalo e modo no arquivo padrão do modloader;
-- entrega na thread do servidor por um adapter de cada modloader.
+- primeiro login: mensagem privada;
+- retorno: mensagem privada;
+- saída: mensagem enviada aos demais jogadores;
+- anúncios periódicos.
 
-`messages.json` será conteúdo administrável, não uma segunda fonte de
-configuração. O loader continuará responsável pelos caminhos e eventos; seleção,
-placeholders e regras ficarão no common.
+## Seleção periódica
 
-As linhas pretendidas são Forge 1.20.1, Forge 1.21.1 e NeoForge 1.21.1 após sua
-validação, com Fabric sendo avaliado separadamente.
+- `SEQUENTIAL`: segue a ordem;
+- `RANDOM`: seleção aleatória;
+- `SHUFFLE`: percorre o catálogo embaralhado antes de reiniciar.
+
+## Placeholders
+
+`{player}`, `{player_uuid}`, `{online}`, `{max_players}`, `{server}` e `{sender}`.
+
+## Arquivos
+
+```text
+<world>/serverconfig/ServerBoost/messages.json
+<world>/serverconfig/ServerBoost/seen_players.json
+```
+
+## Administração
+
+Node: `minecraftserverboostmod.command.announce`.
+
+```text
+/msb announce info <mensagem>
+/msb announce success <mensagem>
+/msb announce warning <mensagem>
+/msb announce error <mensagem>
+/msb announce list
+/msb announce reload
+/msb announce random
+/msb announce send <id>
+/msb announce enable <id>
+/msb announce disable <id>
+```
