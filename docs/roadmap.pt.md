@@ -4,38 +4,29 @@ lang: pt-BR
 
 # Roadmap
 
-O roadmap expressa intenção, não prazo garantido.
+## Entregue na 1.0.0-beta.1
 
-## Linhas implementadas
+- [x] kits comuns e Choice Kits;
+- [x] GUI vanilla server-only;
+- [x] `/kit info` visual;
+- [x] persistência atômica;
+- [x] permissões built-in e FTB Ranks;
+- [x] Forge 1.21.1 e NeoForge 1.21.1;
+- [x] skins e cache;
+- [x] proteção do `/setskin`;
+- [x] quatro idiomas com resolução server-side;
+- [x] primeiro login, retorno e saída;
+- [x] anúncios periódicos;
+- [x] `SEQUENTIAL`, `RANDOM` e `SHUFFLE`;
+- [x] comandos `/msb announce`;
+- [x] CI Forge/NeoForge;
+- [x] módulo Fabric placeholder removido.
 
-- [x] gerenciamento completo de kits;
-- [x] política simples de kit público ou restrito, sem grupos internos;
-- [x] persistência versionada e gravação atômica;
-- [x] permissões built-in;
-- [x] seleção entre built-in e provider externo;
-- [x] integração opcional com FTB Ranks;
-- [x] skins com MineSkin e cache;
-- [x] quatro idiomas no mod;
-- [x] linha Forge 1.20.1;
-- [x] migração Forge 1.21.1 com Java 21;
-- [x] adapters NeoForge 1.21.1 em código;
-- [x] repositório público e documentação bilíngue;
-- [ ] adicionar permissão, cooldown e rate limit ao `/setskin`;
-- [ ] concluir build e validação dedicada do NeoForge 1.21.1;
-- [ ] publicar e ampliar a validação das releases.
+## Próximos passos
 
-## Próxima etapa
-
-- [ ] mensagens de boas-vindas;
-- [ ] anúncios periódicos e aleatórios;
-- [ ] comandos de reload e teste de mensagens;
-- [ ] métricas e logs de diagnóstico sem dados pessoais.
-
-## Expansão de plataformas
-
-- [ ] adapter Fabric 1.20.1;
-- [x] linha Minecraft 1.21.1 no Forge;
-- [x] especialização NeoForge 1.21.1 em código;
-- [ ] classificar NeoForge 1.21.1 como suportado após os testes;
-- [ ] avaliar Fabric 1.21.1;
-- [ ] migração documentada de dados entre linhas.
+- [ ] ampliar testes automatizados;
+- [ ] smoke tests automatizados de servidor dedicado;
+- [ ] otimizar persistência para bases grandes de jogadores;
+- [ ] melhorar ferramentas de edição de Choice Kits;
+- [ ] ampliar observabilidade e diagnóstico;
+- [ ] avaliar futura linha Fabric separadamente.
