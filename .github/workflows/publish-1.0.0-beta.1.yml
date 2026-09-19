@@ -1,0 +1,80 @@
+name: Publish Minecraft Server Boost 1.0.0-beta.1
+
+on:
+  push:
+    branches:
+      - release-publish/v1.0.0-beta.1
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Download verified build artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 \
+            'https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-d03c-820e-8f15-712e605944a9/raw?se=2026-09-19T19%3A49%3A10Z&sp=r&sv=2026-02-06&sr=b&scid=873bc3ba-4842-5390-93ea-4072ecf70a89&skoid=127c13cb-e695-43ea-b6b2-0a863d41dbf7&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T13%3A14%3A41Z&ske=2026-09-20T13%3A14%3A41Z&sks=b&skv=2026-02-06&sig=hvOQcvmJpmRxLS1G6Ns1AZcmgEWGln6cp7nGFFGUCSU%3D' \
+            --output release-artifact.zip
+          mkdir -p dist
+          unzip -q release-artifact.zip -d dist
+          ls -lh dist
+
+      - name: Verify SHA-256
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd dist
+          sha256sum -c SHA256SUMS.txt
+
+      - name: Publish GitHub Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          cat > release-notes.md <<'EOF'
+          First consolidated public beta of Minecraft Server Boost.
+
+          - Minecraft 1.21.1
+          - Java 21
+          - Forge and NeoForge builds
+          - Choice Kits and vanilla server-only GUIs
+          - Built-in permissions and optional FTB Ranks integration
+          - Announcements and server-side messages
+          - Hardened MineSkin integration
+          - PT-BR, EN-US, FR-FR and ES-ES
+
+          This is a beta release. Back up your server data before production use.
+
+          Documentation:
+          https://SousaLJ.github.io/minecraft-server-boost/
+          EOF
+
+          if gh release view 'v1.0.0-beta.1' --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            gh release upload 'v1.0.0-beta.1' \
+              dist/minecraft-server-boost-forge-1.21.1-1.0.0-beta.1.jar \
+              dist/minecraft-server-boost-neoforge-1.21.1-1.0.0-beta.1.jar \
+              dist/SHA256SUMS.txt \
+              --repo "${GITHUB_REPOSITORY}" \
+              --clobber
+          else
+            gh release create 'v1.0.0-beta.1' \
+              dist/minecraft-server-boost-forge-1.21.1-1.0.0-beta.1.jar \
+              dist/minecraft-server-boost-neoforge-1.21.1-1.0.0-beta.1.jar \
+              dist/SHA256SUMS.txt \
+              --repo "${GITHUB_REPOSITORY}" \
+              --target main \
+              --title 'Minecraft Server Boost 1.0.0-beta.1' \
+              --notes-file release-notes.md \
+              --prerelease
+          fi
