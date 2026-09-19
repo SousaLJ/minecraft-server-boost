@@ -4,40 +4,30 @@ lang: en
 
 # Minecraft Server Boost
 
-**Minecraft Server Boost** provides administration tools for Minecraft servers,
-starting with kits, permissions, and skins. This is the official documentation
-and the public hub for support and bug tracking.
+**Minecraft Server Boost** provides server-side administration tools for Minecraft servers.
 
-!!! info "Private source code"
-    The public repository contains documentation and support tracking. The mod
-    source code is maintained separately in a private repository.
-
-## Available features
+## 1.0.0-beta.1
 
 | Feature | Status |
 | --- | --- |
-| Complete kit management | Available on Forge 1.20.1 and Forge 1.21.1 |
-| Public or restricted kits | Available; configured per kit |
+| Forge 1.21.1 / Java 21 | Current beta |
+| NeoForge 1.21.1 / Java 21 | Current beta |
+| Regular kits | Available |
+| Choice Kits | Available |
+| `/kit info` and selection GUI | Vanilla, server-only |
 | Built-in permissions | Available |
-| FTB Ranks and Forge/NeoForge handlers | Optional integration available |
-| Skins and MineSkin cache | Available |
-| Brazilian Portuguese, English, French, and Spanish | Available in the mod |
-| Welcome messages and announcements | Planned |
-| NeoForge 1.21.1 | Port completed; build under validation |
-| Fabric 1.20.1 | Planned |
+| FTB Ranks | Optional integration |
+| Skins / MineSkin | Available |
+| `/setskin` | Permission, HTTPS, cooldown, concurrency limit |
+| First login / return / logout | Available |
+| Periodic announcements | `SEQUENTIAL`, `RANDOM`, `SHUFFLE` |
+| pt-BR, en-US, fr-FR, es-ES | Available |
 
 ## Start here
 
 - [Installation](getting-started/installation.md)
-- [First steps](getting-started/first-steps.md)
-- [Available features](features/index.md)
-- [All commands](commands/index.md)
-- [Kit commands](kits/commands.md)
+- [Features](features/index.md)
+- [Commands](commands/index.md)
 - [Permissions](permissions/overview.md)
-- [Common errors](troubleshooting/common-errors.md)
-
-## Safe downloads
-
-Official CurseForge and Modrinth links will be published on this website. Avoid
-third-party reuploads and always check the Minecraft, modloader, and Java
-versions before starting your server.
+- [Announcements](announcements/overview.md)
+- [Compatibility](compatibility/index.md)

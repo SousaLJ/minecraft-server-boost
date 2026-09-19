@@ -66,7 +66,7 @@ plugins:
             Compatibilidade: Compatibility
             Matriz de suporte: Support Matrix
             Minecraft 1.21.1: Minecraft 1.21.1
-            Próximos recursos: Upcoming Features
+            Recursos do servidor: Server Features
             Sistema de anúncios: Announcement System
             Ajuda: Help
             Erros comuns: Common Errors
@@ -116,9 +116,9 @@ nav:
       - Matriz de suporte: compatibility/index.md
       - Minecraft 1.20.1: compatibility/minecraft-1.20.1.md
       - Minecraft 1.21.1: compatibility/roadmap-1.21.1.md
-  - Próximos recursos:
+  - Recursos do servidor:
       - Sistema de anúncios: announcements/overview.md
-      - Roadmap: roadmap.md
+  - Roadmap: roadmap.md
   - Ajuda:
       - Erros comuns: troubleshooting/common-errors.md
       - Como relatar um bug: troubleshooting/reporting-bugs.md

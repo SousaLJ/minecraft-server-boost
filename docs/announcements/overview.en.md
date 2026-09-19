@@ -4,22 +4,45 @@ lang: en
 
 # Announcement system
 
-!!! note "Planned feature"
-    Announcements and welcome messages are not part of the initial release yet.
+The system runs entirely server-side.
 
-The planned common design includes:
+## Automatic events
 
-- welcome messages when players join;
-- periodic announcements for rules, Discord, and server information;
-- sequential or random selection;
-- safe placeholders such as player name and online player count;
-- a content file named `messages.json`, separate from modloader configuration;
-- activation, interval, and selection mode in the modloader's standard config;
-- delivery on the server thread through a modloader adapter.
+- first login: private message;
+- returning player: private message;
+- logout: message to other players;
+- periodic announcements.
 
-`messages.json` will be editable content, not a second configuration source.
-The modloader remains responsible for paths and events, while selection,
-placeholders, and rules stay in common.
+## Periodic selection
 
-The intended release lines are Forge 1.20.1, Forge 1.21.1, and NeoForge 1.21.1
-after validation, with Fabric evaluated separately.
+- `SEQUENTIAL`: configured order;
+- `RANDOM`: random selection;
+- `SHUFFLE`: traverse a shuffled catalog before restarting.
+
+## Placeholders
+
+`{player}`, `{player_uuid}`, `{online}`, `{max_players}`, `{server}`, and `{sender}`.
+
+## Files
+
+```text
+<world>/serverconfig/ServerBoost/messages.json
+<world>/serverconfig/ServerBoost/seen_players.json
+```
+
+## Administration
+
+Node: `minecraftserverboostmod.command.announce`.
+
+```text
+/msb announce info <message>
+/msb announce success <message>
+/msb announce warning <message>
+/msb announce error <message>
+/msb announce list
+/msb announce reload
+/msb announce random
+/msb announce send <id>
+/msb announce enable <id>
+/msb announce disable <id>
+```

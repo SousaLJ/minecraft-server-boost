@@ -4,44 +4,25 @@ lang: pt-BR
 
 # Instalação
 
-## Escolha a build correta
+A beta 1.0.0 usa **Minecraft 1.21.1**, **Java 21** e possui builds separadas para Forge e NeoForge.
 
-| Minecraft | Modloader | Java | Situação |
-| --- | --- | --- | --- |
-| 1.20.1 | Forge | 17 | Suportado |
-| 1.21.1 | Forge | 21 | Suportado |
-| 1.21.1 | NeoForge | 21 | Em validação; não use em produção antes da release |
+1. faça backup do mundo;
+2. instale o loader correto;
+3. coloque o JAR correspondente em `mods`;
+4. inicie o servidor;
+5. confira o log e os arquivos em `<mundo>/serverconfig/ServerBoost/`.
 
-Não misture builds de Minecraft ou modloader. O nome do JAR e a página de
-download devem corresponder exatamente ao ambiente do servidor.
+## MineSkin
 
-## Instalação no Forge
+Para habilitar `/setskin`, configure o token **somente no ambiente do processo do servidor**:
 
-1. faça backup do mundo e da pasta de configuração;
-2. instale uma versão compatível do Forge para Minecraft 1.20.1 ou 1.21.1;
-3. baixe o JAR somente pelos links oficiais indicados neste site;
-4. coloque o JAR na pasta `mods` do servidor;
-5. inicie o servidor e aceite o EULA do Minecraft quando necessário;
-6. confirme no log a inicialização do Minecraft Server Boost;
-7. pare o servidor antes de editar os arquivos gerados.
+```text
+MINECRAFT_SERVER_BOOST_MINESKIN_TOKEN=<seu-token>
+```
 
-Minecraft 1.20.1 utiliza Java 17; Minecraft 1.21.1 utiliza Java 21.
+Não coloque o token em `config.toml`, scripts públicos ou repositórios.
 
-## NeoForge 1.21.1
-
-O port NeoForge já possui adapters de lifecycle, caminhos, comandos,
-PermissionAPI, FTB Ranks e skins. A build permanece classificada como **em
-validação** até concluir os testes de JAR e servidor dedicado. Quando publicada,
-o procedimento de instalação será o mesmo: NeoForge compatível, Java 21 e o JAR
-específico do NeoForge na pasta `mods`.
-
-!!! warning "Build em validação"
-    Não renomeie o JAR Forge nem tente carregá-lo no NeoForge. Aguarde uma build
-    identificada explicitamente como NeoForge 1.21.1.
-
-## Arquivos gerados
-
-Os dados são mantidos no `serverconfig` do mundo:
+## Dados
 
 ```text
 <mundo>/serverconfig/ServerBoost/
@@ -49,23 +30,8 @@ Os dados são mantidos no `serverconfig` do mundo:
 ├── kits.json
 ├── permissions.json
 ├── player_data.json
+├── messages.json
+├── seen_players.json
 └── skins/
     └── skin_cache.json
 ```
-
-O local exato de `<mundo>` depende de como o servidor foi iniciado e da opção
-`level-name` do `server.properties`.
-
-!!! warning "Não copie dados entre servidores ligados"
-    Edite ou restaure os JSON apenas com o servidor parado. Durante a execução,
-    prefira os comandos de administração e os comandos de reload documentados.
-
-## Atualização
-
-Antes de trocar o JAR:
-
-1. pare o servidor corretamente;
-2. copie `ServerBoost/` para um backup;
-3. leia o [changelog](../changelog.md);
-4. substitua somente o JAR do modloader e versão corretos;
-5. inicie e revise o log antes de liberar jogadores.
